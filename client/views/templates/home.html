@@ -1,0 +1,103 @@
+<template name="home">
+    <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" data-au-record="languages">
+             <li class="dropdown">
+                  {{#if selectedLanguageId}}
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                      <img src="{{loadImg '[flag]' '23x17' selectedLanguageId}}"/>
+                      <span data-au-label="{{selectedLanguageId}}[title]">{{c '[title]' selectedLanguageId}}</span>
+                      <b class="caret"></b>
+                    </a>
+                  {{else}}
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                      <span data-au-label="languages">{{c 'languages'}}</span>
+                      <b class="caret"></b>
+                    </a>
+                  {{/if}}
+                  
+                  <ul class="dropdown-menu">
+                    {{#with recordByPlace '' 'languages'}}
+                        {{#each sorted children _id}}
+                            {{#with this}}
+                                <li data-au-sort-order="{{_id}}" data-au-deletable="{{_id}}"><a data-au-locale="{{_id}}" href="#"><img data-au-image="{{_id}}[flag]" src="{{loadImg '[flag]' '23x17' _id}}"/> <span data-au-label="{{_id}}[title]">{{c '[title]' _id}}</span></a></li>
+                            {{/with}}
+                        {{/each}}
+                    {{/with}}
+                  </ul>
+            </li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a data-au-nav="share_facebook" href="{{nav 'share_facebook' 'href'}}"> 
+                        <i class="fa fa-facebook-square"></i>
+                        <span data-au-label="facebook_title">{{c 'facebook_title'}}</span>
+                    </a>
+                </li>
+                 <li>
+                    <a data-au-nav="share_twitter" href="{{nav 'share_twitter' 'href'}}"> 
+                        <i class="fa fa-twitter"></i>
+                        <span data-au-label="twitter_title">{{c 'twitter_title'}}</span>
+                    </a>
+                </li>
+                 <li>
+                    <a data-au-nav="share_email" href="{{nav 'share_email' 'href'}}"> 
+                        <i class="fa fa-envelope-o"></i>
+                        <span data-au-label="email_title">{{c 'email_title'}}</span>
+                    </a>
+                </li>
+           </ul>
+          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    <div class="main" style="background-image: url('{{loadImg 'bg' '1440x960'}}')" data-au-image="bg">
+        
+        <div class="cover black" data-color="black"></div>
+
+        <div class="container">
+            <h1 class="logo cursive" data-au-nav="brand" data-au-label="headline">{{c 'headline'}}</h1>
+            
+            <div class="content">
+                <h4 class="motto" data-au-label="sub_headline">{{c 'sub_headline'}}</h4>
+                {{#if $.Session.equals 'subscribed' true}}
+                    <div class="subscribe">
+                        <h5 class="info-text" data-au-label="subscribed">{{c 'subscribed'}}</h5>
+                    </div>
+                {{else}}
+                    <div class="subscribe">
+                        <h5 class="info-text" data-au-label="email_invitation">{{c 'email_invitation'}}</h5>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3 ">
+                                <div id="subscribe-form" class="form-inline" role="form">
+                                  <div class="form-group">
+                                    <input id="subscriber-email" type="email" class="form-control transparent" placeholder="{{c 'your_email_here'}}" data-au-label="your_email_here">
+                                  </div>
+                                  <button id="subscribe" type="button" class="btn btn-danger btn-fill" data-au-label="notify_me">{{c 'notify_me'}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="footer">
+          <div class="container">
+
+          </div>
+        </div>
+     </div>
+</template>
