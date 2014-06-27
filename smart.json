@@ -1,13 +1,11 @@
 {
   "name": "au-ui-coming-soon-x",
-  "description": "Template for coming-soon project based on bootstrap3 and with integrated CmsInn",
+  "description": "Template for coming-soon project based on bootstrap 3 and with integrated CmsInn",
   "homepage": "https://github.com/SteelzZ/au-ui-coming-soon-x",
   "author": "Tomas Bartkus <to.bartkus@gmail.com> (http://codetemple.blogspot.com)",
   "version": "0.0.1",
   "git": "https://github.com/SteelzZ/au-ui-coming-soon-x.git",
   "packages": {
-    "au-cmsinn": {
-      "path": "/Users/SteelzZ/Projects/AwareUnit/MeteorPackages/au-cmsinn"
-    }
+    "au-cmsinn": {}
   }
 }
