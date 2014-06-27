@@ -1,4 +1,4 @@
-# Template from coming-soon project based on bootstrap3 and with integrated au-cmsinn [![Build Status](https://travis-ci.org/SteelzZ/au-ui-coming-soon-x.svg?branch=master)](https://travis-ci.org/SteelzZ/au-ui-coming-soon-x)
+# Template for coming-soon project based on bootstrap 3 and with integrated au-cmsinn [![Build Status](https://travis-ci.org/SteelzZ/au-ui-coming-soon-x.svg?branch=master)](https://travis-ci.org/SteelzZ/au-ui-coming-soon-x)
 
 ## History
 
