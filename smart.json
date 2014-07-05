@@ -3,7 +3,7 @@
   "description": "Template for coming-soon project based on bootstrap 3 and with integrated CmsInn",
   "homepage": "https://github.com/SteelzZ/au-ui-coming-soon-x",
   "author": "Tomas Bartkus <to.bartkus@gmail.com> (http://codetemple.blogspot.com)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "git": "https://github.com/SteelzZ/au-ui-coming-soon-x.git",
   "packages": {
     "au-cmsinn": {}

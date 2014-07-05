@@ -13,3 +13,7 @@ if (Meteor.isClient) {
         }
     });
 }
+
+if (Meteor.isServer) {
+    CmsInn.configure({});
+}

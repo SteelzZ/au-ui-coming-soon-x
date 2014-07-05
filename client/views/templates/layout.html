@@ -10,9 +10,13 @@
 <body></body>
 
 <template name="layout">
-    {{#if currentUser}}
+    {{#if $.Session.get '__config'}}
+        {{> au_wizzard}}
+    {{/if}}
+
+    {{#if isInRole 'admin'}}
       {{> cmsinn_controls_left}}
     {{/if}}
-    
+
     {{> yield}}
 </template>
